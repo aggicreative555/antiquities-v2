@@ -50,7 +50,6 @@ This project uses several dependencies for development and testing. Here is the 
 - **Eslint**: Code linting
 - **Prettier**: Code formatting
 
-
 **1. Run the following commands to install all dependencies:**
 
 ```bash
@@ -103,40 +102,51 @@ npm run lint:fix
 npm run format
 ```
 
+**7. Format check**
+
+```bash
+npm run format:check
+```
+
 ## Deployment:
+
 This project can be deployed on platforms like [Netlify](https://app.netlify.com). When deploying to Netlify, ensure you have the following configurations:
 
-- **1. Build project**: 
-```bash 
+- **1. Build project**:
+
+```bash
 npm run build
 ```
-- **2. Deploy via Netlify**: 
-    - Go to Netlify and log in.
 
-    - Click "New site from Git" and connect your GitHub repo.
+- **2. Deploy via Netlify**:
 
-    - Set the build command: npm run build
+  - Go to Netlify and log in.
 
-    - Set the publish directory: dist/
+  - Click "New site from Git" and connect your GitHub repo.
 
-    - Click Deploy.
+  - Set the build command: npm run build
 
+  - Set the publish directory: dist/
+
+  - Click Deploy.
 
 ## Dependencies List:
 
 - **Frontend & Styling:**
-    - Vite – Fast frontend tooling
-    - Tailwind CSS – Utility-first CSS framework
-    - PostCSS - Tailwind pre-processor
-    - Autoprefixer – Adds vendor prefixes
+
+  - Vite – Fast frontend tooling
+  - Tailwind CSS – Utility-first CSS framework
+  - PostCSS - Tailwind pre-processor
+  - Autoprefixer – Adds vendor prefixes
 
 - **State management:**
-    - Zustand – Lightweight and scalable state management
+
+  - Zustand – Lightweight and scalable state management
 
 - **Development Tools:**
-    - ESLint – Linting for cleaner code
-    - Prettier – Automatic code formatting
-    
+  - ESLint – Linting for cleaner code
+  - Prettier – Automatic code formatting
+
 ### License:
 
 This project uses an **ISC** license.
