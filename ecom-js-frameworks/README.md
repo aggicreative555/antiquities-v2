@@ -1,4 +1,4 @@
-_Noroff FRameworks Assignment_
+_Noroff Frameworks Assignment_
 
 # EC0M | _E-commerce Website_
 
@@ -136,8 +136,7 @@ npm run build
 - **Development Tools:**
     - ESLint – Linting for cleaner code
     - Prettier – Automatic code formatting
-    - dotenv – Environment variable management
-
+    
 ### License:
 
 This project uses an **ISC** license.
