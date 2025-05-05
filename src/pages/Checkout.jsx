@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Checkout = () => {
-  return <div>Checkout</div>;
+function Checkout() {
+  return <main className='container mx-auto px-8'>Checkout</main>;
 };
 
 export default Checkout;

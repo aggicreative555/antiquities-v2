@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 export function Layout() {
   return (
-    <div className='flex justify-center align-center flex-col my-10 mx-10'>
+    <div className='flex justify-center flex-col'>
       <Header />
       <Outlet />
       <Footer />

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return <main className='container mx-auto px-8'>NotFound</main>;
 };
 
 export default NotFound;
