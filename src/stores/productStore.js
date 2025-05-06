@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 export const useProductStore = create((set) => ({
   products: [],
@@ -6,7 +6,7 @@ export const useProductStore = create((set) => ({
   isError: false,
 
   fetchProducts: async () => {
-    set({ isLoading:true, isError: false});
+    set({ isLoading: true, isError: false });
 
     try {
       const response = await fetch('https://v2.api.noroff.dev/online-shop');
@@ -14,11 +14,10 @@ export const useProductStore = create((set) => ({
 
       console.log('API response:', json);
 
-      set({ products: json.data, isLoading: false});
-    } catch(error) {
+      set({ products: json.data, isLoading: false });
+    } catch (error) {
       console.error('Fetch error:', error);
       set({ isError: true, isLoading: false });
     }
-  }
+  },
 }));
-
