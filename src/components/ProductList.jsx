@@ -3,9 +3,11 @@ import { useEffect } from 'react';
 import { useProductStore } from '../stores/productStore';
 import { getDiscountInfo } from '../utils/getDicountInfo';
 import { Link } from 'react-router-dom';
+import useCartStore from '../stores/cartStore';
 
 function ProductList() {
   const { products, isLoading, isError, fetchProducts } = useProductStore();
+  const { addToCart } = useCartStore();
 
   useEffect(() => {
     if (products.length === 0) {
@@ -23,14 +25,14 @@ function ProductList() {
         const discount = getDiscountInfo(price, discountedPrice);
 
         return (
-          <Link to={`/products/${product.id}`} key={product.id}>
-            <div className="h-auto max-w-96 shadow-xl border flex flex-col gap-4 rounded">
+          <div className='max-h-[600px] max-w-96 shadow-xl border flex flex-col gap-4 rounded'>
+            <Link to={`/products/${product.id}`} key={product.id}>
               <img
                 className="object-cover w-full h-64 rounded-t"
                 src={image.url}
                 alt={image.alt}
               />
-              <div className="p-6">
+              <div className="px-6 py-4">
                 <h2 className="text-lg font-semibold">{title}</h2>
                 {discount ? (
                   <>
@@ -45,12 +47,21 @@ function ProductList() {
                 ) : (
                   <p className="text-lg font-bold">{price} NOK</p>
                 )}
-                <p className="text-sm text-gray-500">
-                  {tags.map((tag) => `#${tag}`).join(', ')}
-                </p>
               </div>
+            </Link>
+            <div className='px-6 pb-4 h-full flex flex-col justify-end'>
+            <button 
+            className='p-4 my-4 bg-amber-950 hover:bg-amber-800 text-white rounded'
+            onClick={(e) => {
+              e.stopPropagation();
+              addToCart(product);
+            }
+            }>Add to Cart</button>
+            <p className="text-sm text-gray-500">
+              {tags.map((tag) => `#${tag}`).join(', ')}
+            </p>
             </div>
-          </Link>
+          </div>
         );
       })}
     </div>
