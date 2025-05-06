@@ -1,21 +1,46 @@
 import React from 'react';
-import { Routes, Route} from 'react-router';
+import { Routes, Route } from 'react-router';
 import Layout from './layout/Layout';
-import {Home, ProductId, Products, Checkout, CheckoutSuccess, Contact, NotFound} from './pages/index'; 
+import { Slide, ToastContainer } from 'react-toastify';
+import {
+  Home,
+  ProductId,
+  Products,
+  Checkout,
+  CheckoutSuccess,
+  Contact,
+  NotFound,
+} from './pages/index';
+
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="products" element={<Products />} />
-        <Route path="products/:id" element={<ProductId />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="checkout-success" element={<CheckoutSuccess />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <>
+      <ToastContainer
+          position="top-center"
+
+          autoClose={5000}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          pauseOnHover
+          theme="auto" 
+          closeButton={true} 
+          transition={Slide} 
+          className="transition-all duration-150 ease-in-out" 
+      />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductId />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout-success" element={<CheckoutSuccess />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
