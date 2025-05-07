@@ -3,7 +3,7 @@ export function getDiscountInfo(price, discountedPrice) {
     return null;
   }
 
-  const savings = price - discountedPrice;
+  const savings = Math.round(price - discountedPrice);
   const percentage = Math.round((savings / price) * 100);
 
   return {

@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import { showToast } from "../utils/toast";
+import { toast } from "react-toastify";
 
 const useCartStore = create((set, get) => ({
     cart: [],
@@ -6,6 +8,7 @@ const useCartStore = create((set, get) => ({
     addToCart: (product) => {
         const cart = get().cart;
         const exists = cart.find(p => p.id === product.id);
+        const toastId = showToast.itemAdded();
 
         if (exists) {
             set({
@@ -13,6 +16,10 @@ const useCartStore = create((set, get) => ({
                     p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p
                 )
             });
+            showToast.itemAdded();
+            setTimeout(() =>{
+                toast.dismiss(toastId);
+            },500)
         } else {
             set({ cart: [...cart, { ...product, quantity: 1}]});
         }

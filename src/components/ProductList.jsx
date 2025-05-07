@@ -9,6 +9,7 @@ function ProductList() {
   const { products, isLoading, isError, fetchProducts } = useProductStore();
   const { addToCart } = useCartStore();
 
+
   useEffect(() => {
     if (products.length === 0) {
       fetchProducts();
