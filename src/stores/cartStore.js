@@ -40,6 +40,26 @@ const useCartStore = create((set, get) => ({
         })
     },
 
+   increment: (id) => {
+    set({
+        cart: get().cart.map(p =>
+            p.id === id ? {...p, quantiity: p.quantity + 1 } : p
+        )
+    })
+   },
+
+   decrement: (id) => {
+    const updatedCart = get().cart
+
+    .map(p =>
+        p.id === id ? {...p, quantity: p.quantiity - 1 } : p
+    )
+    .filter(p => p.quantity > 0);
+
+    set({ cart: updatedCart });
+
+   },
+
     clearCart: () => set({ cart: []}),
 
     getTotal: () =>
