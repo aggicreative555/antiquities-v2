@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { NotFound } from '../pages';
 import { useProductStore } from '../stores/productStore';
 import { getDiscountInfo } from '../utils/getDicountInfo';
+import useCartStore from '../stores/cartStore';
 
 function SingleProduct() {
   const { id } = useParams();
   const { products, isLoading, isError, fetchProducts } = useProductStore();
+  const {addToCart} = useCartStore();
 
   useEffect(() => {
     if (products.length === 0) {
@@ -48,9 +50,18 @@ function SingleProduct() {
         ) : (
           <p className="text-lg font-bold">{price} NOK</p>
         )}
-        <p className="text-sm text-gray-500">
-          {product.tags.map((tag) => `#${tag}`).join(', ')}
-        </p>
+         <div className='px-6 pb-4 h-full flex flex-col justify-end'>
+            <button 
+            className='p-4 my-4 bg-amber-950 hover:bg-amber-800 text-white rounded'
+            onClick={(e) => {
+              e.stopPropagation();
+              addToCart(product);
+            }
+            }>Add to Cart</button>
+            <p className="text-sm text-gray-500">
+              {tags.map((tag) => `#${tag}`).join(', ')}
+            </p>
+        </div>
       </div>
     </div>
   );

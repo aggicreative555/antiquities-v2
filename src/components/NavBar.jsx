@@ -13,17 +13,17 @@ export function NavBar() {
         </Link>
         <button
           aria-label="Toggle menu"
-          className="m-3 flex gap-2 flex-col min-md:hidden w-fit"
+          className="m-3 flex gap-[6px] flex-col min-md:hidden w-fit"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span
-            className={`h-2 w-11 rounded-full bg-black transition-transform duration-150 ${menuOpen ? 'rotate-45 translate-y-4' : ''}`}
+            className={`h-1 w-8 rounded-full bg-black transition-transform duration-150 ${menuOpen ? 'rotate-45 translate-y-3' : ''}`}
           ></span>
           <span
-            className={`h-2 w-11 rounded-full bg-black transition-transform duration-150 ${menuOpen ? 'opacity-0 translate-y-2' : ''}`}
+            className={`h-1 w-8 rounded-full bg-black transition-transform duration-150 ${menuOpen ? 'opacity-0 translate-y-1' : ''}`}
           ></span>
           <span
-            className={`h-2 w-11 rounded-full bg-black transition-transform duration-150 ${menuOpen ? '-rotate-45 -translate-y-4' : ''}`}
+            className={`h-1 w-8 rounded-full bg-black transition-transform duration-150 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
           ></span>
         </button>
         {/* Desktop */}
