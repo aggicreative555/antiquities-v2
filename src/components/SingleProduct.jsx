@@ -22,7 +22,7 @@ function SingleProduct() {
   if (isError) return <p>Error loading products, please refresh the page...</p>;
   if (!product) return <NotFound />;
 
-  const { price, discountedPrice } = product;
+  const { price, discountedPrice, tags } = product;
   const discount = getDiscountInfo(price, discountedPrice);
   return (
     <div className="flex flex-col md:flex-row gap-10 container mx-auto px-8 py-4">
