@@ -17,21 +17,31 @@ export const showToast = {
         }
     ),
 
-    itemAdded: (message = 'Item has been added to cart!') =>
-        toast.success(message, {
+    itemAdded: (productId, productTitle) =>
+        toast.success(`${productTitle} added to cart!`, {
             className: 'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
             hideProgressBar: true,
             autoClose: 500,
             closeButton: false,
-        }
+            toastId: `item-added-${productId}`,
+        },
     ),
 
-    itemRemoved: (message = 'Item has been removed from cart') =>
-        toast.error(message, {
+    itemRemoved: (productId, productTitle) =>
+        toast.error(`${productTitle} removed from cart.`, {
             className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
             hideProgressBar: true,
             autoClose: 500,
             closeButton: false,
+             toastId: `item-removed-${productId}`,
+        }
+    ),
+
+    cartEmpty: (message = 'Your cart is empty') =>
+        toast.error(message, {
+            className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
+            hideProgressBar: true,
+            autoClose: 500,
         }
     ),
 

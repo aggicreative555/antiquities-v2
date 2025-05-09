@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { showToast } from "../utils/toast";
-import { toast } from "react-toastify";
 
 const useCartStore = create((set, get) => ({
     cart: [],
@@ -8,7 +7,6 @@ const useCartStore = create((set, get) => ({
     addToCart: (product) => {
         const cart = get().cart;
         const exists = cart.find(p => p.id === product.id);
-        const toastId = showToast.itemAdded();
 
         if (exists) {
             set({
@@ -16,19 +14,22 @@ const useCartStore = create((set, get) => ({
                     p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p
                 )
             });
-            showToast.itemAdded();
-            setTimeout(() =>{
-                toast.dismiss(toastId);
-            },500)
         } else {
             set({ cart: [...cart, { ...product, quantity: 1}]});
         }
+
+        showToast.itemAdded(product.id, product.title);
     },
 
     removeFromCart: (id) => {
+        const cart = get().cart;
+        const product = cart.find(p => p.id === id);
+        
         set({
             cart: get().cart.filter(p => p.id !== id)
         })
+
+        showToast.itemRemoved(product.id, product.title);
     },
 
     updateQuantity: (id, quantity) => {
@@ -41,26 +42,54 @@ const useCartStore = create((set, get) => ({
     },
 
    increment: (id) => {
+    const cart = get().cart;
+    const product = cart.find(p => p.id === id);
+
+    if (!product) {
+        console.error(`Product ${id} not found in cart`);
+        return;
+    }
+
     set({
-        cart: get().cart.map(p =>
-            p.id === id ? {...p, quantiity: p.quantity + 1 } : p
+        cart: cart.map(p =>
+            p.id === id ? 
+            {...p, quantity: Math.min(p.quantity + 1, 10)} : p
         )
-    })
+    });
+
+    showToast.itemAdded(product.id, product.title);
    },
 
    decrement: (id) => {
-    const updatedCart = get().cart
+    const cart = get().cart;
+    const product = cart.find(p => p.id === id);
 
-    .map(p =>
-        p.id === id ? {...p, quantity: p.quantiity - 1 } : p
-    )
-    .filter(p => p.quantity > 0);
+    if (!product) {
+        console.error(`Product ${id} not found in cart`);
+        return;
+    }
+    
+    const updatedCart = cart
+
+        .map(p =>
+            p.id === id ? {...p, quantity: Math.max(p.quantity - 1, 0 )} : p
+        )
+
+        .filter(p => p.quantity > 0);
 
     set({ cart: updatedCart });
 
+    showToast.itemRemoved(product.id, product.title);
+
    },
 
-    clearCart: () => set({ cart: []}),
+    clearCart: () => {
+        set({
+            cart: []
+        })
+
+        showToast.cartEmpty();
+    },
 
     getTotal: () =>
         get().cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
