@@ -10,8 +10,10 @@ function Checkout() {
 
   if (cart.length === 0) {
     return (
-      <Link to="/products" className="p-4 border-amber-950 bg-white text-amber-950 border-2 w-full"> Continue Shopping
-      </Link>
+      <div className='flex h-fit mx-10'>
+        <Link to="/products" className="text-center p-4 border-amber-950 bg-white text-amber-950 border-2 w-full"> Continue Shopping
+        </Link>
+      </div>
     )
   }
 

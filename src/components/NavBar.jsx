@@ -6,7 +6,7 @@ export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <nav className="container mx-auto flex justify-between items-center px-4 transition-all duration-150 py-4">
+      <nav className="container mx-auto flex justify-between items-center px-4 transition-all duration-150 py-4 bg-white sticky top-0">
         <Link to="/" className="p-4">
           {' '}
           Logo
@@ -31,12 +31,14 @@ export function NavBar() {
           <NavLinks />
         </ul>
       </nav>
+      {/* Mobile */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-150 ease-in-out ${
-          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden overflow-hidden transition-all duration-150 ease-in-out bg-white ${
+          menuOpen ? 'max-h-96 opacity-100 pointer-events-auto bg-white' 
+          : 'max-h-0 opacity-0 pointer-events-none bg-white'
         }`}
       >
-        <ul className="flex flex-col justify-center items-center gap-4 px-4 py-10">
+        <ul className="flex flex-col bg-white  justify-center items-center gap-4 px-4 py-10">
           <NavLinks />
         </ul>
       </div>

@@ -28,7 +28,7 @@ function NavLinks() {
   return (
     <>
       {links.map(({ to, label, isCart }) => (
-        <li key={to} className="relative">
+        <li key={to} className="relative  bg-white ">
           <NavLink
             to={to}
             className={({ isActive }) =>
