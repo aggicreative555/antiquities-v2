@@ -9,11 +9,13 @@ export const showToast = {
         }
     ),
 
-    checkoutSuccess: (message = 'Purchase successful! Good job, now you can continue your shopping!') =>
+    checkoutSuccess: (message = 'Purchase has been made! We are packing your order...') =>
         toast.success(message, {
             className: 'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
-            hideProgressBar: false,
+            hideProgressBar: true,
+            autoClose: 500,
             progressClassName: 'bg-green-800 rounded',
+            closeButton: 'text-green-800',
         }
     ),
 
@@ -21,7 +23,7 @@ export const showToast = {
         toast.success(`${productTitle} added to cart!`, {
             className: 'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
             hideProgressBar: true,
-            autoClose: 500,
+            autoClose: 300,
             closeButton: false,
             toastId: `item-added-${productId}`,
         },
@@ -31,9 +33,9 @@ export const showToast = {
         toast.error(`${productTitle} removed from cart.`, {
             className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
             hideProgressBar: true,
-            autoClose: 500,
+            autoClose: 300,
             closeButton: false,
-             toastId: `item-removed-${productId}`,
+            toastId: `item-removed-${productId}`,
         }
     ),
 

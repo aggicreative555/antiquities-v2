@@ -2,10 +2,12 @@ import React from 'react';
 import useCartStore from '../stores/cartStore';
 import Increment from '../components/Increment';
 import { Link } from 'react-router-dom';
+import CheckoutButton from '../components/CheckoutButton';
 
 function Checkout() {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const clearCart = useCartStore((state) => state.clearCart);
   const total = useCartStore((state) => state.getTotal());
 
   if (cart.length === 0) {
@@ -66,8 +68,16 @@ function Checkout() {
       </ul>
       <div className="flex flex-col md:flex-row gap-6 h-fit my-4 md:items-center w-full">
         <p className='uppercase w-fit text-nowrap'>Price {Math.round(total)} NOK</p>
-        <Link to="/checkout-success" className="p-4 border-amber-950 bg-amber-900 text-white border-2 w-full"> Proceed to checkout
-        </Link>
+        <button
+          aria-label="Clear cart"
+          className="p-4 border-red-800 bg-red-100 text-red-800 border-2 w-full transition-all duration-150 ease-in-out cursor-pointer hover:bg-red-300 hover:text-bold"
+          onClick={() => {
+            clearCart();
+            }
+          }
+          > Clear cart
+        </button>
+        <CheckoutButton/>
       </div>
       </div>
       </div>
