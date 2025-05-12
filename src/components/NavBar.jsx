@@ -6,7 +6,7 @@ export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <nav className="container mx-auto flex justify-between items-center px-4 transition-all duration-150 py-4 bg-white sticky top-0">
+      <nav className="container mx-auto flex justify-between items-center px-4 transition-all duration-150 py-4">
         <Link to="/" className="p-4">
           {' '}
           Logo
