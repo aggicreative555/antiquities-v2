@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CheckoutSuccess = () => {
   const cart = useCartStore((state) => state.cart);
-   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <main className="container mx-auto px-8">
@@ -15,12 +15,12 @@ const CheckoutSuccess = () => {
         </Link>
       </div>
       <div className="relative">
-        <button className='flex bg-white border-black flex-row justify-between w-full p-4 mt-8 group transition-all duration-300 ease-in-out cursor-pointer hover:bg-gray-200 rounded z-50'
+        <button className='flex w-full border-2 bg-white border-black flex-row justify-between items-center p-4 mt-8 group  cursor-pointer hover:bg-gray-200 rounded z-50'
           aria-label="Toggle dropdown"
           onClick={() => setDropdownOpen(!dropdownOpen)}
               >
           <h2 className=''>Purchase summary</h2>
-          <div className="m-4 relative min-md:hidden w-fit cursor-pointer">
+          <div className="m-4 relative w-fit cursor-pointer">
             <span
                 className={`h-1 w-4 rounded-full absolute bg-black transition-transform duration-150 ${dropdownOpen ? '-rotate-45' : 'rotate-45 '}`}
               ></span>
@@ -31,14 +31,14 @@ const CheckoutSuccess = () => {
         </button>
       </div>
       <ul
-        className={`transition-all duration-300 ease-in-out bg-white rounded overflow-hidden relative z-10 ${
+        className={`bg-white rounded transition-all duration-300 ease-in-out overflow-hidden relative z-10 ${
           dropdownOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
         >
         {cart.map((product) => (
           <li
           key={product.id}
-          className={`flex md:flex-row flex-col md:items-center -z-10 gap-4 justify-between p-4 border-b-1 border-gray-400 transition-all duration-50 ${dropdownOpen ? '' : '-translate-y-20 pointer-events-none'} `}>
+          className={`flex md:flex-row flex-col md:items-center -z-10 gap-4 justify-between p-4 transition-all border-b-1 border-gray-400  ${dropdownOpen ? '' : '-translate-y-40 pointer-events-none'} `}>
           <div className="gap-6 flex flex-row">
             <img
               src={product.image?.url}

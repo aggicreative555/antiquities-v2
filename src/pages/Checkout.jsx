@@ -3,6 +3,7 @@ import useCartStore from '../stores/cartStore';
 import Increment from '../components/Increment';
 import { Link } from 'react-router-dom';
 import CheckoutButton from '../components/CheckoutButton';
+import { showToast } from '../utils/toast';
 
 function Checkout() {
   const cart = useCartStore((state) => state.cart);
@@ -73,6 +74,7 @@ function Checkout() {
           className="p-4 border-red-800 bg-red-100 text-red-800 border-2 w-full transition-all duration-150 ease-in-out cursor-pointer hover:bg-red-300 hover:text-bold"
           onClick={() => {
             clearCart();
+            showToast.cartEmpty();
             }
           }
           > Clear cart
