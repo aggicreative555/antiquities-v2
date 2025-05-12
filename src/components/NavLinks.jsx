@@ -1,7 +1,6 @@
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useCartStore from '../stores/cartStore';
 import { useState, useEffect } from 'react';
-
 
 function NavLinks() {
   const itemCount = useCartStore((state) => state.getItems());
@@ -33,7 +32,9 @@ function NavLinks() {
             to={to}
             className={({ isActive }) =>
               `block py-1 transition-colors ${
-                isActive ? 'text-amber-950 font-bold' : 'text-black hover:bg-amber-50'
+                isActive
+                  ? 'text-amber-950 font-bold'
+                  : 'text-black hover:bg-amber-50'
               }`
             }
           >

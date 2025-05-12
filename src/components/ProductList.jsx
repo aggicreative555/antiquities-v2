@@ -5,12 +5,16 @@ import { getDiscountInfo } from '../utils/getDicountInfo';
 import { Link } from 'react-router-dom';
 import useCartStore from '../stores/cartStore';
 
-function ProductList({ products: propProducts}) {
-  const { products: storeProducts, isLoading, isError, fetchProducts } = useProductStore();
+function ProductList({ products: propProducts }) {
+  const {
+    products: storeProducts,
+    isLoading,
+    isError,
+    fetchProducts,
+  } = useProductStore();
   const { addToCart } = useCartStore();
 
-  const products = propProducts?.length ? propProducts : storeProducts
-  
+  const products = propProducts?.length ? propProducts : storeProducts;
 
   useEffect(() => {
     if (!propProducts?.length && storeProducts.length === 0) {
@@ -27,9 +31,12 @@ function ProductList({ products: propProducts}) {
         {products.map((product) => {
           const { title, price, discountedPrice, tags, image } = product;
           const discount = getDiscountInfo(price, discountedPrice);
-          
+
           return (
-            <div className='h-[550px] w-60 md:w-80 shadow-xl border flex flex-col gap-4 rounded transition-all ease-in-out duration-300' key={product.id}>
+            <div
+              className="h-[550px] w-60 md:w-80 shadow-xl border flex flex-col gap-4 rounded transition-all ease-in-out duration-300"
+              key={product.id}
+            >
               <Link to={`/products/${product.id}`}>
                 <img
                   className="object-cover w-full h-64 rounded-t"
@@ -53,14 +60,16 @@ function ProductList({ products: propProducts}) {
                   )}
                 </div>
               </Link>
-              <div className='px-6 pb-4 h-full flex flex-col justify-end'>
-                <button 
-                className='p-4 my-4 bg-amber-950 hover:bg-amber-800 text-white rounded'
-                onClick={(e) => {
-                  e.stopPropagation();
-                  addToCart(product);
-                }
-                }>Add to Cart</button>
+              <div className="px-6 pb-4 h-full flex flex-col justify-end">
+                <button
+                  className="p-4 my-4 bg-amber-950 hover:bg-amber-800 text-white rounded"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addToCart(product);
+                  }}
+                >
+                  Add to Cart
+                </button>
                 <p className="text-sm text-gray-500">
                   {tags.map((tag) => `#${tag}`).join(', ')}
                 </p>

@@ -34,8 +34,9 @@ export function NavBar() {
       {/* Mobile */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-150 ease-in-out bg-white ${
-          menuOpen ? 'max-h-96 opacity-100 pointer-events-auto bg-white' 
-          : 'max-h-0 opacity-0 pointer-events-none bg-white'
+          menuOpen
+            ? 'max-h-96 opacity-100 pointer-events-auto bg-white'
+            : 'max-h-0 opacity-0 pointer-events-none bg-white'
         }`}
       >
         <ul className="flex flex-col bg-white  justify-center items-center gap-4 px-4 py-10">

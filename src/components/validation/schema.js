@@ -26,8 +26,5 @@ export const schema = yup.object().shape({
     .required('Please enter a message to contact us')
     .min(3, 'Your message must be at least 3 characters')
     .max(100, 'Message cannot exeed 100 characters')
-    .matches(
-        /^[A-Za-z0-9 .,!?'"()\[\]\-]+$/,
-      'Please enter a valid message '
-    ),
+    .matches(/^[A-Za-z0-9 .,!?'"()\[\]\-]+$/, 'Please enter a valid message '),
 });

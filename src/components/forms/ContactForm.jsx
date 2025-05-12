@@ -31,6 +31,7 @@ function ContactForm() {
         reset();
         navigate('/');
       },5000);
+      
     } catch (error) {
       console.error("Error sending form:", error);
       showToast.error();

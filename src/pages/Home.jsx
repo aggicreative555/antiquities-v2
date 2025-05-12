@@ -4,9 +4,9 @@ import ProductList from '../components/ProductList';
 const Home = () => {
   return (
     <main className="container mx-auto px-8">
-      <ProductList/>
+      <ProductList />
     </main>
-  )
+  );
 };
 
 export default Home;

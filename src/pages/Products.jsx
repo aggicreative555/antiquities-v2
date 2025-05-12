@@ -14,17 +14,16 @@ function Products() {
     }
   }, [products.length, fetchProducts]);
 
-  
-  const handleResults = useCallback((results) => {setFilteredProducts(results);
+  const handleResults = useCallback((results) => {
+    setFilteredProducts(results);
   }, []);
 
   return (
     <main className="container mx-auto px-8">
-        <SearchBar onResults={(handleResults)}></SearchBar>
-        <ProductList products={
-          filteredProducts.length 
-          ? filteredProducts
-           : products } />
+      <SearchBar onResults={handleResults}></SearchBar>
+      <ProductList
+        products={filteredProducts.length ? filteredProducts : products}
+      />
     </main>
   );
 }
