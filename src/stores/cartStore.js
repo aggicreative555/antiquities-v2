@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { showToast } from "../utils/toast";
+import { toast } from "react-toastify";
 
 const useCartStore = create((set, get) => ({
     cart: [],
@@ -87,8 +88,6 @@ const useCartStore = create((set, get) => ({
         set({
             cart: []
         })
-
-        showToast.cartEmpty();
     },
 
     getTotal: () =>

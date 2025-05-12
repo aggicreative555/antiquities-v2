@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router';
 import Layout from './layout/Layout';
 import { Slide, ToastContainer } from 'react-toastify';
+import ScrollToTop from './hooks/scrollToTop';
 import {
   Home,
   ProductId,
@@ -16,6 +17,7 @@ import {
 function App() {
   return (
     <>
+      <ScrollToTop/>
       <ToastContainer
           position="top-center"
 

@@ -13,7 +13,7 @@ export const showToast = {
         toast.success(message, {
             className: 'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
             hideProgressBar: true,
-            autoClose: 500,
+            autoClose: 1000,
             progressClassName: 'bg-green-800 rounded',
             closeButton: 'text-green-800',
         }
@@ -51,9 +51,9 @@ export const showToast = {
         toast.error(message, {
             className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
             hideProgressBar: true,
+            autoClose: 500,
         }
     ),
-    
 
     sending: (message = 'Sending your message...') =>
         toast.loading(message, {
