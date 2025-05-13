@@ -4,6 +4,7 @@ import { NotFound } from '../pages';
 import { useProductStore } from '../stores/productStore';
 import { getDiscountInfo } from '../utils/getDicountInfo';
 import useCartStore from '../stores/cartStore';
+import StarRating from './rating/StarRating';
 
 function SingleProduct() {
   const { id } = useParams();
@@ -22,6 +23,8 @@ function SingleProduct() {
   if (isError) return <p>Error loading products, please refresh the page...</p>;
   if (!product) return <NotFound />;
 
+  console.log(product);
+
   const { price, discountedPrice, tags } = product;
   const discount = getDiscountInfo(price, discountedPrice);
   return (
@@ -35,7 +38,9 @@ function SingleProduct() {
       </div>
       <div className="flex flex-col gap-4 h-full">
         <h1 className="text-2xl font-bold">{product.title}</h1>
-        <p className="mt-2 text-lg">{product.rating}</p>
+        <div className="mt-2 flex flex-row text-lg items-center gap-2">
+          <StarRating/>
+        </div>
         <p className="mt-2 text-lg">{product.description}</p>
         {discount ? (
           <>
