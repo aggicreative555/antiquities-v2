@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useProductStore } from '../stores/productStore';
 import { getDiscountInfo } from '../utils/getDicountInfo';
 import { Link } from 'react-router-dom';
 import useCartStore from '../stores/cartStore';
+import Pagination from './Pagination';
+import { useSearchParams } from 'react-router-dom';
 
-function ProductList({ products: propProducts }) {
+function ProductList({ products: propProducts, itemsPerPage = 6 }) {
   const {
     products: storeProducts,
     isLoading,
@@ -15,6 +16,12 @@ function ProductList({ products: propProducts }) {
   const { addToCart } = useCartStore();
 
   const products = propProducts?.length ? propProducts : storeProducts;
+  const [searchParams] = useSearchParams();
+
+  const currentPage = parseInt(searchParams.get('page')) || 1;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentProducts = products.slice(indexOfFirstItem, indexOfLastItem);
 
   useEffect(() => {
     if (!propProducts?.length && storeProducts.length === 0) {
@@ -22,13 +29,17 @@ function ProductList({ products: propProducts }) {
     }
   }, [propProducts, storeProducts.length, fetchProducts]);
 
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   if (isLoading) return <p>Loading Content...</p>;
   if (isError) return <p>Error loading products, please refresh the page...</p>;
 
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative place-items-center w-full transition-all ease-in-out duration-300">
-        {products.map((product) => {
+        {currentProducts.map((product) => {
           const { title, price, discountedPrice, tags, image } = product;
           const discount = getDiscountInfo(price, discountedPrice);
 
@@ -62,7 +73,7 @@ function ProductList({ products: propProducts }) {
               </Link>
               <div className="px-6 pb-4 h-full flex flex-col justify-end">
                 <button
-                  className="p-4 my-4 bg-amber-950 hover:bg-amber-800 text-white rounded"
+                  className="btn-l"
                   onClick={(e) => {
                     e.stopPropagation();
                     addToCart(product);
@@ -78,6 +89,7 @@ function ProductList({ products: propProducts }) {
           );
         })}
       </div>
+      <Pagination totalItems={products.length} itemsPerPage={itemsPerPage}/>
     </>
   );
 }
