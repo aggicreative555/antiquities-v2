@@ -1,8 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faB } from '@fortawesome/free-solid-svg-icons';
 import Layout from './layout/Layout';
 import { Slide, ToastContainer } from 'react-toastify';
-import useScrollToTop from './hooks/useScrollToTop';
+import ScrollToTop from './hooks/useScrollToTop';
 import {
   Home,
   ProductId,
@@ -13,10 +15,12 @@ import {
   NotFound,
 } from './pages/index';
 
+library.add(faB)
+
 function App() {
   return (
     <>
-      <useScrollToTop />
+      <ScrollToTop />
       <ToastContainer
         position="top-center"
         autoClose={5000}

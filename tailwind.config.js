@@ -1,7 +1,20 @@
 const config = {
-  content: ['./src/**/*.{html,js}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+
+      colors: {
+        primary: {
+          burgundy: '#BF0000',
+          green: '#024225',
+          black: '#121212',
+          gray: '#999999',
+        }
+      },
+    },
   },
   plugins: [],
 };
