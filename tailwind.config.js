@@ -5,15 +5,6 @@ const config = {
   ],
   theme: {
     extend: {
-
-      colors: {
-        primary: {
-          burgundy: '#BF0000',
-          green: '#024225',
-          black: '#121212',
-          gray: '#999999',
-        }
-      },
     },
   },
   plugins: [],

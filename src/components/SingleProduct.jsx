@@ -23,7 +23,6 @@ function SingleProduct() {
   if (isError) return <p>Error loading products, please refresh the page...</p>;
   if (!product) return <NotFound />;
 
-  console.log(product);
 
   const { price, discountedPrice, tags } = product;
   const discount = getDiscountInfo(price, discountedPrice);

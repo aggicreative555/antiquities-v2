@@ -45,35 +45,43 @@ function ProductList({ products: propProducts, itemsPerPage = 6 }) {
 
           return (
             <div
-              className="h-[550px] w-60 md:w-80 shadow-xl border flex flex-col gap-4 rounded transition-all ease-in-out duration-300"
+              className="h-[600px] w-60 md:w-80 shadow-md flex flex-col justify-between transition-all ease-in-out duration-300 hover:shadow-xl group"
               key={product.id}
             >
-              <Link to={`/products/${product.id}`}>
-                <img
-                  className="object-cover w-full h-64 rounded-t"
-                  src={image.url}
-                  alt={image.alt}
-                />
-                <div className="px-6 py-4">
-                  <h2 className="text-lg font-semibold">{title}</h2>
+              <Link to={`/products/${product.id}`} className='cursor-pointer'>
+                <div className="h-64 w-fit overflow-clip">
+                  <img
+                    className="transition-transform duration-300 ease-in-out object-cover min-h-64 aspect-auto group-hover:scale-110"
+                    src={image.url}
+                    alt={image.alt}
+                  />
+                </div>
+                <div className="px-6 py-4 flex justify-between items-center flex-col relative">
+                  <h2 className="text-xl text-center font-garamond uppercase text-red-900 mb-8">{title}</h2>
                   {discount ? (
                     <>
-                      <p className="text-lg font-bold text-red-700">
+                    <p className='absolute -top-10 -right-2 bg-red-900 flex items-center justify-center w-fit aspect-square p-1 text-white font-button rounded-full'>- {discount.percentage}%</p>
+                      <p className="text-lg font-button text-black">
                         {discountedPrice} NOK
                       </p>
-                      <p className="line-through text-gray-500">{price} NOK</p>
-                      <p className="text-sm text-green-600">
-                        You save {discount.savings} NOK ({discount.percentage}%)
+                      <span className='h-[.5px] w-[50px] bg-black mb-1'></span>
+                      <p className="line-through text-xs font-button text-gray-500">{price} NOK</p>
+                      <p className="text-[.5rem] font-button italic text-black">
+                        You save {discount.savings} NOK
                       </p>
                     </>
                   ) : (
-                    <p className="text-lg font-bold">{price} NOK</p>
+                    <p className="text-lg font-button text-black">{price} NOK</p>
                   )}
+                <p className='text-center text-xs font-caslon text-black line-clamp-2 mt-4'>
+                  {product.description}
+
+                </p>
                 </div>
               </Link>
-              <div className="px-6 pb-4 h-full flex flex-col justify-end">
+              <div className="px-6 pb-4 h-full flex flex-col justify-center">
                 <button
-                  className="btn-l"
+                  className="flex justify-center items-center btn-l mb-5"
                   onClick={(e) => {
                     e.stopPropagation();
                     addToCart(product);
@@ -81,15 +89,15 @@ function ProductList({ products: propProducts, itemsPerPage = 6 }) {
                 >
                   Add to Cart
                 </button>
-                <p className="text-sm text-gray-500">
+                <p className="text-xs text-gray-400 font-caslon">
                   {tags.map((tag) => `#${tag}`).join(', ')}
                 </p>
               </div>
             </div>
           );
         })}
+        <Pagination totalItems={products.length} itemsPerPage={itemsPerPage}/>
       </div>
-      <Pagination totalItems={products.length} itemsPerPage={itemsPerPage}/>
     </>
   );
 }

@@ -22,7 +22,7 @@ const Pagination = ({ totalItems, itemsPerPage = 3}) => {
             <button
             onClick={() => goToPage(currentPage - 1)}
             disabled={currentPage === 1}
-            className='capitalize px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded disabled:hidden'
+            className='capitalize btn-l disabled:hidden'
             >
             previous page
             </button>
@@ -33,8 +33,8 @@ const Pagination = ({ totalItems, itemsPerPage = 3}) => {
                         <button
                         key={page}
                         onClick={() => goToPage(page)}
-                        className={`px-1 py-1 mx-4 my-2 text-black
-                        ${currentPage === page ?'border-b-2 border-black' : 'border-b-1 border-white'}`}
+                        className={`px-1 mx-4 my-2 text-black font-button
+                        ${currentPage === page ?'border-b-2 border-black' : 'border-b-2 border-white'}`}
                         >
                             {page}
                         </button>
@@ -44,7 +44,7 @@ const Pagination = ({ totalItems, itemsPerPage = 3}) => {
             <button
             onClick={() => goToPage(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className='capitalize px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded disabled:hidden'
+            className='capitalize btn-l disabled:hidden'
             >
             next page
             </button>

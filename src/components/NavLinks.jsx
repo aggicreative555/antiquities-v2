@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import useCartStore from '../stores/cartStore';
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBasketShopping, faBugSlash, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 function NavLinks() {
   const itemCount = useCartStore((state) => state.getItems());
@@ -20,8 +22,9 @@ function NavLinks() {
   const links = [
     { to: '/', label: 'Home' },
     { to: '/products', label: 'Products' },
-    { to: '/checkout', label: 'Cart', isCart: true },
-    { to: '/contact', label: 'Contact' },
+    { to: '/checkout', 
+      label: <FontAwesomeIcon icon={faBasketShopping}/>, 
+      isCart: true },
   ];
 
   return (
@@ -31,10 +34,10 @@ function NavLinks() {
           <NavLink
             to={to}
             className={({ isActive }) =>
-              `block py-1 transition-colors ${
+              `block my-1 font-garamond text-lg uppercase text-black transition-all duration-50 ease-in-out ${
                 isActive
-                  ? 'text-amber-950 font-bold'
-                  : 'text-black hover:bg-amber-50'
+                  ? 'text-red-900 font-bold border-b-[1px] border-red-900 hover:text-black hover:border-black hover:tracking-wider'
+                  : 'text-black hover:border-b-[1px] border-black hover:tracking-wide'
               }`
             }
           >
@@ -43,7 +46,7 @@ function NavLinks() {
               <span
                 aria-label="Cart item count"
                 className={`
-                  absolute -top-2 -right-3 bg-amber-800 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full
+                  absolute -top-2 -right-3 bg-red-900 text-white font-button text-xs w-5 h-5 flex items-center justify-center rounded-full
                   transition-all duration-300
                   ${itemCount > 0 ? 'block' : 'hidden'}
                   ${animate ? 'animate-bounce' : ''}

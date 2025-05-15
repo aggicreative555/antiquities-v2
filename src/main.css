@@ -12,23 +12,18 @@
   --font-garamond: 'EB Garamond', 'serif';
   --font-caslon: 'Libre Caslon Text', 'serif';
   --font-button: 'Fahkwang', 'sans-serif';
-
-  --color-burgundy: #bf0000;
-  --color-green: #024225;
-  --color-black: #121212;
-  --color-gray: #999999;
 }
 
 @layer components {
   .btn-l {
-    @apply flex items-center justify-center px-4 py-2 my-4 border-2 border-black outline-2 outline-offset-2 font-button uppercase text-xs font-light;
+    @apply flex items-center justify-center px-4 py-2 my-1 border-2 border-black outline-black outline-1 outline-offset-2 font-button uppercase text-xs font-light transition-all duration-300 ease-in-out hover:font-medium hover:border-4 hover:tracking-wider cursor-pointer;
   }
 
   .btn-primary {
-    @apply;
+    @apply bg-green-950 text-white hover:border-4 hover:font-medium cursor-pointer;
   }
 
   .btn-s {
-    @apply flex items-center justify-center px-4 py-2 my-4 border-2 border-black outline-2 outline-offset-2 font-button uppercase text-xs font-light;
+    @apply flex items-center justify-center px-4 py-2 my-4 rounded-full shadow-md font-button uppercase text-xs font-light transition-all duration-300 ease-in-out hover:font-medium hover:shadow-lg cursor-pointer;
   }
 }
