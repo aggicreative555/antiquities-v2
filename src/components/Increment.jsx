@@ -9,32 +9,31 @@ function Increment({ product }) {
     <div className="flex  items-center gap-2">
       <button
         aria-label="Decrease quantity"
-        className={`px-3 py-1 rounded border-2 border-gray-300 text-center transition-all duration-150 ease-in-out ${product.quantity === 1 ? 'text-gray-300 border cursor-not-allowed' : 'bg-white hover:bg-gray-400 cursor-pointer'}`}
+        className={`btn-s h-10 w-10 p-0  ${product.quantity === 1 ? 'opacity-30 cursor-not-allowed' : 'btn-s cursor-pointer'}`}
         onClick={(e) => {
           e.stopPropagation();
           if (product.quantity > 1) {
             decrement(product.id);
-            console.log('decrement');
           }
         }}
         disabled={product.quantity === 1}
       >
-        -
+        <span className='h-[1.5px] w-3 bg-black disabled:bg-gray-300 disabled:cursor-not-allowed'></span>
       </button>
-      <span className="min-w-[30px] text-center">{product.quantity}</span>
+      <span className="min-w-[30px] text-center font-caslon text-lg ">{product.quantity}</span>
       <button
         aria-label="Increase quantity"
-        className={`px-3 py-1 rounded border-2 border-gray-300 text-center transition-all duration-150 ease-in-out ${product.quantity === 10 ? 'text-gray-400 border cursor-not-allowed' : 'bg-white hover:bg-gray-400 cursor-pointer'}`}
+        className={`btn-s h-10 w-10 p-0 cursor-pointer'}`}
         onClick={(e) => {
           e.stopPropagation();
           if (product.quantity < 10) {
             increment(product.id);
-            console.log('increment');
           }
         }}
         disabled={product.quantity === 10}
       >
-        +
+       <span className='h-[1.5px] w-3 translate-x-1/2 rotate-90 bg-black disabled:bg-gray-200 disabled:cursor-not-allowed'></span>
+       <span className='h-[1.5px] w-3 -translate-x-1/2 bg-black disabled:bg-gray-300 disabled:cursor-not-allowed'></span>
       </button>
     </div>
   );

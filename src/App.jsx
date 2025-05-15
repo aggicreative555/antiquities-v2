@@ -15,8 +15,6 @@ import {
   NotFound,
 } from './pages/index';
 
-library.add(faB)
-
 function App() {
   return (
     <>
