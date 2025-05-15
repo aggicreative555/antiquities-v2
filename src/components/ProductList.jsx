@@ -57,10 +57,10 @@ function ProductList({ products: propProducts, itemsPerPage = 6 }) {
                   />
                 </div>
                 <div className="px-6 py-4 flex justify-between items-center flex-col relative">
-                  <h2 className="text-xl text-center font-garamond uppercase text-red-900 mb-8">{title}</h2>
+                  <h2 className="text-xl text-center font-garamond uppercase text-red-800 mb-8">{title}</h2>
                   {discount ? (
                     <>
-                    <p className='absolute -top-10 -right-2 bg-red-900 flex items-center justify-center w-fit aspect-square p-1 text-white font-button rounded-full'>- {discount.percentage}%</p>
+                    <p className='absolute -top-10 -right-2 bg-red-900 flex items-center justify-center w-fit aspect-square p-1 text-white font-button rounded-full hover:scale-110 hover:rotate-12 hover:translate-y-2 duration-300 transition-transform cursor-default'>- {discount.percentage}%</p>
                       <p className="text-lg font-button text-black">
                         {discountedPrice} NOK
                       </p>
@@ -96,6 +96,8 @@ function ProductList({ products: propProducts, itemsPerPage = 6 }) {
             </div>
           );
         })}
+      </div>
+      <div className='w-full flex items-center justify-center mt-6 mb-12 md:mt-10 md:mb-18'>
         <Pagination totalItems={products.length} itemsPerPage={itemsPerPage}/>
       </div>
     </>
