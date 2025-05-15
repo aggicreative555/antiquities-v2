@@ -12,7 +12,7 @@ function ContactForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting},
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: yupResolver(schema),
     mode: 'onBlur',
@@ -23,17 +23,16 @@ function ContactForm() {
     const toastId = showToast.sending();
     try {
       await new Promise((resolve) => setTimeout(resolve, 5000));
-      console.log("Form submitted:", data);
+      console.log('Form submitted:', data);
 
       showToast.messageSuccess();
 
       setTimeout(() => {
         reset();
         navigate('/');
-      },5000);
-      
+      }, 5000);
     } catch (error) {
-      console.error("Error sending form:", error);
+      console.error('Error sending form:', error);
       showToast.error();
     } finally {
       toast.dismiss(toastId);
@@ -41,8 +40,11 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 md:w-96">
-      <label className='flex flex-col w-full'>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-6 md:w-96"
+    >
+      <label className="flex flex-col w-full">
         Full Name
         <input
           type="text"
@@ -54,7 +56,7 @@ function ContactForm() {
           <p className="text-red-800 error-message">{errors.name.message}</p>
         )}
       </label>
-      <label className='flex flex-col w-full'>
+      <label className="flex flex-col w-full">
         Email
         <input
           type="email"
@@ -66,7 +68,7 @@ function ContactForm() {
           <p className="text-red-800 error-message">{errors.email.message}</p>
         )}
       </label>
-      <label className='flex flex-col w-full'>
+      <label className="flex flex-col w-full">
         Subject
         <input
           list="subject-options"
@@ -86,7 +88,7 @@ function ContactForm() {
           <p className="text-red-800 error-message">{errors.subject.message}</p>
         )}
       </label>
-      <label className='flex flex-col w-full'>
+      <label className="flex flex-col w-full">
         Message
         <textarea
           {...register('body')}
@@ -101,7 +103,9 @@ function ContactForm() {
         type="submit"
         className="bg-amber-950 text-white py-2 px-4 rounded hover:bg-amber-700 transition-all ease-in-out duration-150"
         disabled={isSubmitting}
-      > {isSubmitting ? 'Sending message...' : 'Send Message'}
+      >
+        {' '}
+        {isSubmitting ? 'Sending message...' : 'Send Message'}
       </button>
     </form>
   );

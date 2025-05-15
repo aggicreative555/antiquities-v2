@@ -4,10 +4,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { showToast } from '../utils/toast';
 
-
 const CheckoutSuccess = () => {
   const cart = useCartStore((state) => state.cart);
-  const rawCart = useCartStore((state) => state.cart)
+  const rawCart = useCartStore((state) => state.cart);
   const [cartSnapshot, setCartSnapshot] = useState([]);
   const clearCart = useCartStore((state) => state.clearCart);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -17,19 +16,17 @@ const CheckoutSuccess = () => {
 
     const handleUnload = () => {
       clearCart(); // cart clears after leaving the page
-      
-    }
+    };
 
     window.addEventListener('beforeunload', handleUnload);
     return () => {
       clearCart(); // clears cart on route change
       setTimeout(() => {
-         showToast.cartEmpty();
-      },1000);
-      window.removeEventListener('beforeunload', handleUnload)
-    }
+        showToast.cartEmpty();
+      }, 1000);
+      window.removeEventListener('beforeunload', handleUnload);
+    };
   }, []);
-
 
   return (
     <main className="container mx-auto px-8">
@@ -63,9 +60,9 @@ const CheckoutSuccess = () => {
       <ul
         className={`bg-white rounded transition-all duration-300 ease-in-out overflow-hidden relative z-10 ${
           dropdownOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+        }`}
+      >
         {cartSnapshot.map((product) => (
-
           <li
             key={product.id}
             className={`flex md:flex-row flex-col md:items-center -z-10 gap-4 justify-between p-4 transition-all border-b-1 border-gray-400  ${dropdownOpen ? '' : '-translate-y-40 pointer-events-none'} `}

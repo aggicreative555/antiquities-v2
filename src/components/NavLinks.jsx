@@ -2,7 +2,11 @@ import { NavLink } from 'react-router-dom';
 import useCartStore from '../stores/cartStore';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBasketShopping, faBugSlash, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBasketShopping,
+  faBugSlash,
+  faCartShopping,
+} from '@fortawesome/free-solid-svg-icons';
 
 function NavLinks() {
   const itemCount = useCartStore((state) => state.getItems());
@@ -22,9 +26,11 @@ function NavLinks() {
   const links = [
     { to: '/', label: 'Home' },
     { to: '/products', label: 'Products' },
-    { to: '/checkout', 
-      label: <FontAwesomeIcon icon={faBasketShopping}/>, 
-      isCart: true },
+    {
+      to: '/checkout',
+      label: <FontAwesomeIcon icon={faBasketShopping} />,
+      isCart: true,
+    },
   ];
 
   return (
