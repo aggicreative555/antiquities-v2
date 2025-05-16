@@ -91,7 +91,7 @@ function Checkout() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col md:flex-row gap-2 h-fit my-4 md:items-center w-full">
+          <div className="flex flex-col gap-2 h-fit my-4 items-center justify-center  w-full transition-all ease-in-out duration-300">
             <div className="uppercase font-button font-light text-gray-400 text-sm text-nowrap flex-wrap cursor-default my-5 flex gap-2 items-center border border-black w-full h-fit p-4 py-6 outline-1 outline-offset-1 outline-black">
               <span>Total</span>
               <span className='text-black text-2xl'>
@@ -100,7 +100,7 @@ function Checkout() {
             </div>
             <button
               aria-label="Clear cart"
-              className="btn-l py-4"
+              className="btn-l py-4 w-full"
               onClick={() => {
                 clearCart();
                 showToast.cartEmpty();

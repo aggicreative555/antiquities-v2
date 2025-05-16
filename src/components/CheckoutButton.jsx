@@ -18,7 +18,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="btn-l btn-primary py-4 focus:ring-offset-2"
+      className="btn-l btn-primary py-4 w-full focus:ring-offset-2"
       onClick={handleCheckout}
       aria-label="Proceed to checkout"
     >
