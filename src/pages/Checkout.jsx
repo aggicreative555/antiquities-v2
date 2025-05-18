@@ -16,7 +16,7 @@ function Checkout() {
   if (cart.length === 0) {
     return (
       <div className="flex flex-col items-center h-fit mx-10">
-        <h2 className="uppercase font-button tracking-wider font-light text-lg my-5 pt-5 pb-2 border-b-2 border-gray-200">
+        <h2 className="font-button uppercase font-light tracking-wider text-xl break-word my-5 pt-5 pb-2 border-b-2 border-gray-200">
           Your cart is currently empty
         </h2>
         <Link

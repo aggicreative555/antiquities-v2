@@ -70,7 +70,7 @@ const SearchBar = ({ onResults }) => {
       <input
         type="search"
         placeholder="What are you looking for today?"
-        className="uppercase text-black break-words text-wrap w-full overflow-visible p-3 focus:border-b-2 focus:outline-none group-hover:text-gray-400 focus:normal-case focus:italic font-button transition-all duration-300 ease-in-out tracking-tighter text-sm md:text-base"
+        className="uppercase text-black break-words text-wrap w-full overflow-visible p-3 focus:bg-gray-200 focus:outline-none appearence-none group-hover:text-gray-400 focus:normal-case focus:italic font-button transition-all duration-300 ease-in-out tracking-tighter text-sm md:text-base"
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         aria-label="Search products"

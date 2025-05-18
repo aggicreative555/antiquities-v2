@@ -6,7 +6,7 @@ export const showToast = {
   ) =>
     toast.success(message, {
       className:
-        'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
+        'p-6 shadow-md bg-green-100 border border-green-800 text-green-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: false,
       progressClassName: 'bg-green-800 rounded',
     }),
@@ -16,7 +16,7 @@ export const showToast = {
   ) =>
     toast.success(message, {
       className:
-        'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
+        'p-6 shadow-md bg-green-100 border border-green-800 text-green-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: true,
       autoClose: 1000,
       progressClassName: 'bg-green-800 rounded',
@@ -26,7 +26,7 @@ export const showToast = {
   itemAdded: (productId, productTitle) =>
     toast.success(`${productTitle} added to cart!`, {
       className:
-        'p-6 shadow-md bg-green-100 border border-green-800 text-green-800',
+        'p-6 shadow-md bg-green-100 border border-green-800 text-green-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: true,
       autoClose: 300,
       closeButton: false,
@@ -35,7 +35,8 @@ export const showToast = {
 
   itemRemoved: (productId, productTitle) =>
     toast.error(`${productTitle} removed from cart.`, {
-      className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
+      className:
+        'p-6 shadow-md bg-red-100 border border-red-800 text-red-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: true,
       autoClose: 300,
       closeButton: false,
@@ -44,7 +45,8 @@ export const showToast = {
 
   cartEmpty: (message = 'Your cart is empty') =>
     toast.error(message, {
-      className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
+      className:
+        'p-6 shadow-md bg-red-100 border border-red-800 text-red-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: true,
       autoClose: 500,
     }),
@@ -53,7 +55,8 @@ export const showToast = {
     message = 'Something went wrong! Please try again by refreshing the page.'
   ) =>
     toast.error(message, {
-      className: 'p-6 shadow-md bg-red-100 border border-red-800 text-red-800',
+      className:
+        'p-6 shadow-md bg-red-100 border border-red-800 text-red-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: true,
       autoClose: 500,
     }),
@@ -61,7 +64,7 @@ export const showToast = {
   sending: (message = 'Sending your message...') =>
     toast.loading(message, {
       className:
-        'p-6 shadow-md bg-amber-100 border border-amber-800 text-amber-800',
+        'p-6 shadow-md bg-amber-100 border border-amber-800 text-amber-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: false,
       progressClassName: 'bg-amber-800 rounded',
     }),
@@ -69,7 +72,7 @@ export const showToast = {
   purchasing: (message = 'Logging your purchase...') =>
     toast.loading(message, {
       className:
-        'p-6 shadow-md bg-amber-100 border border-amber-800 text-amber-800',
+        'p-6 shadow-md bg-amber-100 border border-amber-800 text-amber-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: false,
       progressClassName: 'bg-amber-800 rounded',
     }),
@@ -77,7 +80,7 @@ export const showToast = {
   loading: (message = 'Please wait while the operation is loading...') =>
     toast.loading(message, {
       className:
-        'p-6 shadow-md bg-amber-100 border border-amber-800 text-amber-800',
+        'p-6 shadow-md bg-amber-100 border border-amber-800 text-amber-800 font-garamond italic normal-case text-base rounded-none',
       hideProgressBar: false,
       progressClassName: 'bg-amber-800 rounded',
     }),
