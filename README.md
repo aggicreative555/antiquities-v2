@@ -2,9 +2,14 @@ _Noroff Frameworks Assignment_
 
 # 🦢 SwanCom — React E-commerce
 
+![image](https://github.com/user-attachments/assets/03330ab3-9bfe-4191-9fe8-687a30645f9f)
+
 ## Description:
 
 Welcome to SwanCOM, an e-commerce website where you can buy various items! This is an **SPA** application built with **React**, **Vite**, **Tailwind** & **Zustand**. It features products, cart and checkout using the Noroff **API**. The project is built using modern JavaScript practices and deployed to Netlify.
+
+# Link: 
+[SwanCOM](https://swancom.netlify.app/)
 
 # Table of Contents
 
