@@ -7,6 +7,8 @@ const Carousel = ({ images, options = {} }) => {
   useEffect(() => {
     if (!sliderRef.current) return;
 
+    console.log('carousel')
+
     const glide = new Glide(sliderRef.current, {
       type: 'carousel',
       perView: 1,
