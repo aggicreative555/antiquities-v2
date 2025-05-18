@@ -3,6 +3,8 @@ import { useProductStore } from '../../stores/productStore';
 import { showToast } from '../../utils/toast';
 import { useDebounce } from '../../hooks/useDebounce';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = ({ onResults }) => {
   const products = useProductStore((state) => state.products);
@@ -63,24 +65,28 @@ const SearchBar = ({ onResults }) => {
   return (
     <div
       ref={wrapperRef}
-      className="w-full max-w-xl mx-auto my-4 relative z-10"
+      className="w-full flex justify-between items-center container max-w-[500px] mx-auto px-4 mt-5 mb-16 relative z-10 border-b border-gray-300 hover:border-black focus:border-none group transition-all duration-300 ease-in-out"
     >
       <input
         type="search"
-        placeholder="Search for products..."
-        className="w-full p-3 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+        placeholder="What are you looking for today?"
+        className="uppercase text-black break-words text-wrap w-full overflow-visible p-3 focus:border-b-2 focus:outline-none group-hover:text-gray-400 focus:normal-case focus:italic font-button transition-all duration-300 ease-in-out tracking-tighter text-sm md:text-base"
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         aria-label="Search products"
         onFocus={() => setIsFocused(true)}
       />
+      <FontAwesomeIcon
+        icon={faMagnifyingGlass}
+        className="ml-3 shrink-0 text-lg group-hover:scale-125 transition-transform duration-300 ease-in-out"
+      />
 
       {isFocused && suggestions.length > 0 && (
-        <ul className="absolute left-0 right-0 mt-1 py-2 bg-white border rounded shadow z-10 max-h-60 overflow-y-auto">
+        <ul className="text-sm absolute left-0 right-0 top-14 mt-1 pt-2 pb-5 bg-white border-b-[1px] border-gray-300 font-caslon font-light italic z-10 max-h-60 overflow-y-auto transition-all duration-300 ease-in-out">
           {suggestions.map((product) => (
             <li
               key={product.id}
-              className="px-6 py-2 hover:bg-gray-300 cursor-pointer"
+              className="px-6 py-2 hover:bg-gray-100 hover:tracking-wider cursor-pointer transition-all duration-300 ease-in-out"
               onClick={() => handleSuggestions(product.title)}
             >
               {product.title}
