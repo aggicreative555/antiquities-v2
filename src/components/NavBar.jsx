@@ -15,7 +15,7 @@ export function NavBar() {
           <img
             src={logo}
             alt="SwanCom logo"
-            className="swan w-[70px] h-auto object-cover transition-all duration-300 ease-in-out translate-y-3"
+            className="w-[70px] h-auto object-cover transition-all duration-300 ease-in-out translate-y-3"
           />
           <span className="font-ballet font-medium text-[16px] ">Swan</span>
           <span className="font-garamond text-[12px] font-bold ">COM</span>

@@ -10,7 +10,7 @@ const NotFound = () => {
           <img
             src={logo}
             alt="SwanCom logo"
-            className="swan w-[150px] h-auto object-cover transition-all duration-300 ease-in-out group-hover:translate-x-2 md:group-hover:-translate-x-2"
+            className="w-[150px] h-auto object-cover transition-all duration-300 ease-in-out group-hover:translate-x-2 md:group-hover:-translate-x-2"
           />
           <div className="flex flex-col justify-center items-center text-black">
             <span className="group-hover:italic group-hover:font-semibold font-button text-sm uppercase font-light group-hover:text-red-800">

@@ -107,7 +107,7 @@ function SingleProduct() {
               ))}
             </ul>
           ) : (
-            <p className="text-sm font-button uppercase">No rviews yet</p>
+            <p className="text-sm font-button uppercase">No reviews yet</p>
           )}
         </div>
       </div>

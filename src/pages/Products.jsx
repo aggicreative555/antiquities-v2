@@ -23,7 +23,7 @@ function Products() {
       <h1 className="text-4xl md:text-6xl text-red-800 font-garamond text-center w-full cursor-default uppercase mb-20 mt-10">
         All products
       </h1>
-      <SearchBar onResults={handleResults}></SearchBar>
+      <SearchBar onResults={handleResults} />
       <ProductList
         products={filteredProducts.length ? filteredProducts : products}
       />
