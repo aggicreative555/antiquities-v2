@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductList from '../components/ProductList';
-import Carousel from '../components/carousel/carousel';
+import Carousel from '../components/carousel/Carousel';
 import swanBoat from '../assets/images/swan-boat.jpg';
 import whiteSwans from '../assets/images/white-swans.jpg';
 import paintingSwan from '../assets/images/painting-swan.jpg';
