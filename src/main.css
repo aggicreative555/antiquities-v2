@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import '@glidejs/glide/dist/css/glide.core.min.css';
+@import '@glidejs/glide/dist/css/glide.theme.min.css';
 
 @import 'tailwindcss';
 
@@ -8,10 +11,28 @@
   box-sizing: border-box;
 }
 
+.tv {
+  position: relative;
+  margin: 20px 0;
+  border-radius: 50% / 10%;
+}
+
+.tv:before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: -5%;
+  left: -5%;
+  background: inherit;
+  border-radius: 5% / 50%;
+}
+
 @theme {
   --font-garamond: 'EB Garamond', 'serif';
   --font-caslon: 'Libre Caslon Text', 'serif';
   --font-button: 'Fahkwang', 'sans-serif';
+  --font-ballet: 'Ballet', 'serif';
 }
 
 @layer components {
