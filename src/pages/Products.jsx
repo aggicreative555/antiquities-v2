@@ -20,6 +20,9 @@ function Products() {
 
   return (
     <main className="container mx-auto px-8">
+      <h1 className="text-4xl md:text-6xl text-red-800 font-garamond text-center w-full cursor-default uppercase mb-20 mt-10">
+        All products
+      </h1>
       <SearchBar onResults={handleResults}></SearchBar>
       <ProductList
         products={filteredProducts.length ? filteredProducts : products}

@@ -33,7 +33,7 @@ const Pagination = ({ totalItems, itemsPerPage = 3 }) => {
             <button
               key={page}
               onClick={() => goToPage(page)}
-              className={`px-1 mx-4 my-2 text-black font-button
+              className={`px-1 mx-4 my-2 text-black font-button cursor-pointer
                         ${currentPage === page ? 'border-b-2 border-black' : 'border-b-2 border-white'}`}
             >
               {page}

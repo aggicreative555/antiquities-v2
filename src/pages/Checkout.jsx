@@ -16,7 +16,9 @@ function Checkout() {
   if (cart.length === 0) {
     return (
       <div className="flex flex-col items-center h-fit mx-10">
-        <h2 className='uppercase font-button tracking-wider font-light text-lg my-5 pt-5 pb-2 border-b-2 border-gray-200'>Your cart is currently empty</h2>
+        <h2 className="uppercase font-button tracking-wider font-light text-lg my-5 pt-5 pb-2 border-b-2 border-gray-200">
+          Your cart is currently empty
+        </h2>
         <Link
           to="/products"
           className="btn-l btn-primary w-full transition-all ease-in-out duration-300  
@@ -32,18 +34,20 @@ function Checkout() {
   return (
     <div className="container h-fit mx-auto px-8">
       <div className="flex flex-row justify-between items-center relative w-full mb-16 mt-2">
-        <Link to='' className="absolute">
-        <FontAwesomeIcon
-          icon={faArrowLeftLong}
-          className='text-2xl text-black transition-transform duration-300 ease-in-out hover:-translate-x-2'
-        />
+        <Link to="" className="absolute">
+          <FontAwesomeIcon
+            icon={faArrowLeftLong}
+            className="text-2xl text-black transition-transform duration-300 ease-in-out hover:-translate-x-2"
+          />
         </Link>
         <h1 className="absolute right-1/2 translate-x-1/2 text-3xl md:text-5xl text-center font-garamond uppercase tracking-tighter text-red-800 transition-all duration-300 ease-in-out">
           Your cart
         </h1>
       </div>
-      <div className='flex gap-1 flex-col'>
-        <p className="text-base uppercase font-light font-button text-black">Your products</p>
+      <div className="flex gap-1 flex-col">
+        <p className="text-base uppercase font-light font-button text-black">
+          Your products
+        </p>
         <div>
           <ul className="mt-5 flex flex-col gap-4">
             {cart.map((product) => (
@@ -76,15 +80,13 @@ function Checkout() {
                         }}
                       >
                         {' '}
-                        <span
-                          className='bg-black rotate-45 translate-x-[7px] h-[1.5px] w-4'
-                        ></span>
-                        <span
-                          className='bg-black -rotate-45 -translate-x-[5px] h-[1.5px] w-4'
-                        ></span>
+                        <span className="bg-black rotate-45 translate-x-[7px] h-[1.5px] w-4"></span>
+                        <span className="bg-black -rotate-45 -translate-x-[5px] h-[1.5px] w-4"></span>
                       </button>
                     </div>
-                    <p className="text-lg text-black font-button mb-5 group-hover:text-xl group-hover:tracking-wider transition-all">{product.price} NOK</p>
+                    <p className="text-lg text-black font-button mb-5 group-hover:text-xl group-hover:tracking-wider transition-all">
+                      {product.price} NOK
+                    </p>
                     <Increment product={product} />
                   </div>
                 </div>
@@ -94,8 +96,8 @@ function Checkout() {
           <div className="flex flex-col gap-2 h-fit my-4 items-center justify-center  w-full transition-all ease-in-out duration-300">
             <div className="uppercase font-button font-light text-gray-400 text-sm text-nowrap flex-wrap cursor-default my-5 flex gap-2 items-center border border-black w-full h-fit p-4 py-6 outline-1 outline-offset-1 outline-black">
               <span>Total</span>
-              <span className='text-black text-2xl'>
-              {Math.round(total)} NOK
+              <span className="text-black text-2xl">
+                {Math.round(total)} NOK
               </span>
             </div>
             <button
