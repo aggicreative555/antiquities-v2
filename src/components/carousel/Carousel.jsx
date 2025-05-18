@@ -36,7 +36,7 @@ const Carousel = ({ images, options = {} }) => {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-screen object-cover h-auto aspect-video hover:scale-110 transition-all duration-10 ease-in-out"
+                className="w-[400px] md:w-[1500px] object-cover h-auto aspect-video hover:scale-110 transition-all duration-10 ease-in-out"
               />
               <div className="absolute px-4 py-2 bg-gradient-to-r from-black/60 via-black/30 to-black/60 h-full w-full ">
                 <div className="text-center absolute bottom-1/2 left-1/2 translate-y-1/2 -translate-x-1/2 text-white flex flex-col gap-1 lg:bottom-2/3 items-center justify-center">

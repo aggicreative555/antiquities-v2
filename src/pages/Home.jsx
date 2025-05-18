@@ -10,18 +10,21 @@ const Home = () => {
   const images = [
     {
       src: swanBoat,
+      alt: 'A boat shaped like a swan in water',
       text: 'Sun, waves, swans.',
       content:
         'Surrender to the warmth and serenity of the summer season waves. Let go with us...',
     },
     {
       src: whiteSwans,
+      alt: 'A white swan in water behind bushes',
       text: 'Let the waves take you',
       content:
         'The current here is warm. Explore our vast selection of premium products. ',
     },
     {
       src: paintingSwan,
+      alt: 'Classical painting of a clothingless woman and a swan',
       text: 'Do not fret.',
       content:
         'We have a great return policy on all our items. Visit our contact page to file a return. ',
