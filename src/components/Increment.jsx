@@ -18,9 +18,11 @@ function Increment({ product }) {
         }}
         disabled={product.quantity === 1}
       >
-        <span className='h-[1.5px] w-3 bg-black disabled:bg-gray-300 disabled:cursor-not-allowed'></span>
+        <span className="h-[1.5px] w-3 bg-black disabled:bg-gray-300 disabled:cursor-not-allowed"></span>
       </button>
-      <span className="min-w-[30px] text-center font-caslon text-lg ">{product.quantity}</span>
+      <span className="min-w-[30px] text-center font-caslon text-lg ">
+        {product.quantity}
+      </span>
       <button
         aria-label="Increase quantity"
         className={`btn-s h-10 w-10 p-0 cursor-pointer'}`}
@@ -32,8 +34,8 @@ function Increment({ product }) {
         }}
         disabled={product.quantity === 10}
       >
-       <span className='h-[1.5px] w-3 translate-x-1/2 rotate-90 bg-black disabled:bg-gray-200 disabled:cursor-not-allowed'></span>
-       <span className='h-[1.5px] w-3 -translate-x-1/2 bg-black disabled:bg-gray-300 disabled:cursor-not-allowed'></span>
+        <span className="h-[1.5px] w-3 translate-x-1/2 rotate-90 bg-black disabled:bg-gray-200 disabled:cursor-not-allowed"></span>
+        <span className="h-[1.5px] w-3 -translate-x-1/2 bg-black disabled:bg-gray-300 disabled:cursor-not-allowed"></span>
       </button>
     </div>
   );
