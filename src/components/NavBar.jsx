@@ -1,15 +1,24 @@
 import { Link } from 'react-router-dom';
 import NavLinks from './NavLinks';
 import React, { useState } from 'react';
+import logo from '/public/swan.svg';
 
 export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <nav className="container mx-auto flex justify-between items-center px-6 md:px-12 transition-all duration-150 py-4">
-        <Link to="/" className="p-4">
-          {' '}
-          Logo
+        <Link
+          to="/"
+          className="p-1 relative hover:scale-110 transition-all duration-300 ease-in-out"
+        >
+          <img
+            src={logo}
+            alt="SwanCom logo"
+            className="swan w-[70px] h-auto object-cover transition-all duration-300 ease-in-out translate-y-3"
+          />
+          <span className="font-ballet font-medium text-[16px] ">Swan</span>
+          <span className="font-garamond text-[12px] font-bold ">COM</span>
         </Link>
         <button
           aria-label="Toggle menu"
