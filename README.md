@@ -1,6 +1,6 @@
 _Noroff Frameworks Assignment_
 
-# EC0M | _E-commerce Website_
+# 🦢 SwanCom — React E-commerce
 
 ## Description:
 
