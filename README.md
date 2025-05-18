@@ -4,7 +4,7 @@ _Noroff Frameworks Assignment_
 
 ## Description:
 
-Welcome to ECOM, an e-commerce website where you can buy various items! This is an **SPA** application built with **React**, **Vite**, **Tailwind** & **Zustand**. It features products, cart and checkout using the Noroff **API**. The project is built using modern JavaScript practices and deployed to Netlify.
+Welcome to SwanCOM, an e-commerce website where you can buy various items! This is an **SPA** application built with **React**, **Vite**, **Tailwind** & **Zustand**. It features products, cart and checkout using the Noroff **API**. The project is built using modern JavaScript practices and deployed to Netlify.
 
 # Table of Contents
 
