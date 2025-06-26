@@ -1,15 +1,15 @@
 _Noroff Frameworks Assignment_
 
-# 🦢 SwanCom — React E-commerce
+# 🛋️ Antiquities — React Auctioning Website
 
-![image](https://github.com/user-attachments/assets/03330ab3-9bfe-4191-9fe8-687a30645f9f)
+![image](https://github.com/user-attachments/assets/44c74b1c-aaa6-4be9-954c-eb944032aa45)
+
 
 ## Description:
 
-Welcome to SwanCOM, an e-commerce website where you can buy various items! This is an **SPA** application built with **React**, **Vite**, **Tailwind** & **Zustand**. It features products, cart and checkout using the Noroff **API**. The project is built using modern JavaScript practices and deployed to Netlify.
+Welcome to ANTIQUITIES, an antique-auctioning website, where you can view antiques, log in, and place bids on the items you want. This is an **SPA** application built with **React**, **Vite**, **Tailwind** & **Zustand**. It features products, cart and checkout using the Noroff **API**. The project is built using modern JavaScript practices and deployed to Netlify.
 
 # Link: 
-[SwanCOM](https://swancom.netlify.app/)
 
 # Table of Contents
 
@@ -40,7 +40,7 @@ Before you begin, ensure you have the following installed on your system:
 ### Cloning the repo:
 
 ```bash
-git clone https://github.com/NoroffFEU/jsfw-2025-v1-js-frameworks-25.git
+git clone https://github.com/aggicreative555/antiquities-v2.git
 ```
 
 ### Installing dependencies:
@@ -158,4 +158,4 @@ This project uses an **ISC** license.
 
 ### Acknowledgements:
 
-This project is a part of my _Noroff University of Technology_ education.
+This project is a build on top of my _Noroff University of Technology_ education.
